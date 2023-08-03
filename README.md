@@ -62,13 +62,12 @@ embeddedAppCode({
    clientId: 'clientId', // mandatory
    clientSecret: 'clientSecret', // mandatory
    metadata: {
-       tenantId: 'tenantId'
-   } // Optional
+       tenantId: 'tenantId' // mandatory
+   }
 })
 ```
 
-Please note, not passing a `tenantId` will result in all shipments connected to this `clientId` showing in our app.
-Passing a `tenantId` will result in showing only the specific tenant shipments.
+Please note, passing a `tenantId` is required in order to show only the specific tenant shipments.
 
 ---
 
