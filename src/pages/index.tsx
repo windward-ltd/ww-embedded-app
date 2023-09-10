@@ -15,7 +15,7 @@ const windwardEmbeddedDivStyle = {
 const FILTERS_URL_PARAM = 'filters';
 const SEARCH_TERMS_PARAM = 'searchTerms';
 
-// The following object contains a mapping of the available filter names and their url params..
+// The following object contains a mapping of the available filter names and their url params.
 // {
 //     'Arriving soon (1-3 days)': 'soon',
 //     'Arrived': 'arrived',
@@ -67,7 +67,7 @@ export async function getServerSideProps() {
         clientId: process.env.EMBEDDED_APP_SCRIPT_CLIENT_ID!,
         clientSecret: process.env.EMBEDDED_APP_SCRIPT_CLIENT_SECRET!,
         metadata: {
-            tenantId: "tenantId_demo"
+            tenantId: "ben"
         }
     });
 
