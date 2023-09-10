@@ -15,6 +15,24 @@ const windwardEmbeddedDivStyle = {
 const FILTERS_URL_PARAM = 'filters';
 const SEARCH_TERMS_PARAM = 'searchTerms';
 
+// The following object contains a mapping of the available filter names and their url params.
+// {
+//     'Arriving soon (1-3 days)': 'soon',
+//     'Arrived': 'arrived',
+//     'Tracking completed': 'trackingCompleted',
+//     'Rollover at PO':'RLV_POL',
+//     'Rollover at TSP': 'RLV_TSP',
+//     'Late departure': 'LTD',
+//     'Transshipment delay': 'TSD',
+//     'Insufficient T/S time': 'ITT',
+//     'Routing deficiency': 'RDF',
+//     'Late allocation': 'FVD',
+//     'On Time': 'ot',
+//     'Early (1+ days)': 'early',
+//     'Significant delay (1-4 days)': 'sgndl',
+//     'Critical delay (5+ days)': 'crtdl',
+// }
+
 function Index({code}: InferGetServerSidePropsType<typeof getServerSideProps>) {
 
     const searchParams = useSearchParams();
@@ -41,23 +59,6 @@ function Index({code}: InferGetServerSidePropsType<typeof getServerSideProps>) {
 
 export default Index;
 
-const filtersMap:Record<string, string> = {
-    'Arriving soon (1-3 days)': 'soon',
-    'Arrived': 'arrived',
-    'Tracking completed': 'trackingCompleted',
-    'Rollover at PO':'RLV_POL',
-    'Rollover at TSP': 'RLV_TSP',
-    'Late departure': 'LTD',
-    'Transshipment delay': 'TSD',
-    'Insufficient T/S time': 'ITT',
-    'Routing deficiency': 'RDF',
-    'Late allocation': 'FVD',
-    'On Time': 'ot',
-    'Early (1+ days)': 'early',
-    'Significant delay (1-4 days)': 'sgndl',
-    'Critical delay (5+ days)': 'crtdl',
-}
-
 // Retrieves the embedded app code required for embedding the application.
 // tenantId is optional and is needed to be able to show only a specific tenant shipments.
 // If tenantId is not provided, all shipments of the client are shown.
@@ -66,7 +67,7 @@ export async function getServerSideProps() {
         clientId: process.env.EMBEDDED_APP_SCRIPT_CLIENT_ID!,
         clientSecret: process.env.EMBEDDED_APP_SCRIPT_CLIENT_SECRET!,
         metadata: {
-            tenantId: "tenantId_demo"
+            tenantId: "ben"
         }
     });
 
