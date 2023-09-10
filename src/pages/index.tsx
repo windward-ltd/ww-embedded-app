@@ -67,7 +67,7 @@ export async function getServerSideProps() {
         clientId: process.env.EMBEDDED_APP_SCRIPT_CLIENT_ID!,
         clientSecret: process.env.EMBEDDED_APP_SCRIPT_CLIENT_SECRET!,
         metadata: {
-            tenantId: "ben"
+            tenantId: "tenantId_demo"
         }
     });
 
