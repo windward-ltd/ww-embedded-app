@@ -43,7 +43,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 
 ## Configuration
-The project requires the following environment variables to be set. Use the provided .env file in the root directory and populate it with the necessary values:
+The project requires the following environment variables to be set. Copy `.env.example` to `.env` in the root directory and populate it with the necessary values (`.env` is git-ignored, so your credentials stay local):
 ```env
 NEXT_PUBLIC_GRAPHQL_GATEWAY_URL=https://graphql.wnwd.com
 NEXT_PUBLIC_EMBEDDED_APP_SCRIPT_ORIGIN=https://ofv.wnwd.com
