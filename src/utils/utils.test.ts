@@ -3,6 +3,10 @@ import {embeddedAppCodeMutationFragment} from "@/gql/mutations/embeddedAppCode";
 import {mockVariables, mockEmbeddedAppCode, mockResponse, mockErrorResponse} from "@/utils/mocks";
 
 describe('getEmbeddedAppCodeResponse', () => {
+    beforeAll(() => {
+        process.env.NEXT_PUBLIC_GRAPHQL_GATEWAY_URL = 'https://gateway.example.test';
+    });
+
     it('should return the embedded app code when successful', async () => {
         const mockFetch = jest.fn().mockResolvedValue({
             json: jest.fn().mockResolvedValue(mockResponse),
